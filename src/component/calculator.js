@@ -12,8 +12,9 @@ export default class Calculator extends Component {
   render() {
     return (
       <div className="calc">
+        <h1>REACT-CALCULATOR</h1>
         <div>
-          <span>input1</span>
+          <span className="input">input1</span>
           <input
             size="15"
             onChange={(e) => {
@@ -24,7 +25,7 @@ export default class Calculator extends Component {
         </div>
         <br></br>
         <div>
-          <span>input2</span>
+          <span className="input">input2</span>
           <input
             size="15"
             onChange={(e) => {
