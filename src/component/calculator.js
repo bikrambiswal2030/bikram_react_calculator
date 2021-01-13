@@ -5,10 +5,10 @@ export default class Calculator extends Component {
     super(props);
     this.state = {
       num1: "",
-      num2: ""
+      num2: "",
+      result: ""
     };
   }
-
   render() {
     return (
       <div className="calc">
@@ -38,39 +38,71 @@ export default class Calculator extends Component {
         <div>
           <button
             onClick={() =>
-              alert(parseInt(this.state.num1) + parseInt(this.state.num2))
+              this.setState({
+                result: parseInt(this.state.num1) + parseInt(this.state.num2)
+              })
             }
           >
             ADD
           </button>
           <button
             onClick={() =>
-              alert(parseInt(this.state.num1) - parseInt(this.state.num2))
+              this.setState({
+                result: parseInt(this.state.num1) - parseInt(this.state.num2)
+              })
             }
           >
             SUB
           </button>
           <button
             onClick={() =>
-              alert(parseInt(this.state.num1) * parseInt(this.state.num2))
+              this.setState({
+                result: parseInt(this.state.num1) * parseInt(this.state.num2)
+              })
             }
           >
             MULTIPLY
           </button>
           <button
             onClick={() =>
-              alert(parseInt(this.state.num1) / parseInt(this.state.num2))
+              this.setState({
+                result: parseInt(this.state.num1) / parseInt(this.state.num2)
+              })
             }
           >
             DIV
           </button>
           <button
             onClick={() =>
-              alert(parseInt(this.state.num1) % parseInt(this.state.num2))
+              this.setState({
+                result: parseInt(this.state.num1) % parseInt(this.state.num2)
+              })
             }
           >
             MOD
           </button>
+          <button
+            onClick={() =>
+              this.setState({
+                num1: "",
+                num2: "",
+                result: ""
+              })
+            }
+          >
+            CLEAR
+          </button>
+        </div>
+        <br />
+        <div>
+          <span className="input">result</span>
+          <input
+            size="15"
+            onChange={(e) => {
+              this.setState({ result: e.target.value });
+            }}
+            value={this.state.result}
+          />
         </div>
       </div>
     );
