@@ -12,7 +12,7 @@ export default class Calculator extends Component {
   render() {
     return (
       <div className="calc">
-        <h1>REACT-CALCULATOR</h1>
+        <h1>MY CALCULATOR</h1>
         <div>
           <span className="input">input1</span>
           <input
